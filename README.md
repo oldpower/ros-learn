@@ -64,8 +64,20 @@ netstat -tulpn | grep :22
      PermitRootLogin no
      AllowUsers your_username
      ```
+#### 1.5 提交容器为新镜像
+使用 `docker commit` 命令将容器保存为镜像：
+```bash
+docker commit <容器ID或名称> <新镜像名称>:<标签>
+```
+**示例**：
+```bash
+docker commit ros-container ros1:v1.0
+```
+- **容器ID或名称**：通过 `docker ps` 查看。
+- **新镜像名称**：自定义，例如 `ros1`。
+- **标签**：可选，默认为 `latest`，建议使用版本号（如 `v1.0`）。
 
-#### 启动脚本
+#### 1.4 启动脚本
 ```bash
 run_docker.sh
 ```
